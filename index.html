@@ -1,0 +1,303 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>D.V.H.S.S Thalavoor - Mobile</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+  <style>
+    :root {
+      --primary-color: #2e5aac;
+      --secondary-color: #1e3d75;
+      --accent-light: #f4f8ff;
+      --section-bg: #ffffffdd;
+      --text-color: white;
+      --hover-glow: rgba(255, 255, 255, 0.4);
+      --dark-bg: #1e1e2f;
+      --dark-section: #2b2b3d;
+      --dark-text: #e0e0e0;
+    }body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: linear-gradient(to right, #e3f2fd, #e0f7fa);
+  scroll-behavior: smooth;
+  transition: background 0.4s, color 0.4s;
+}
+
+body.dark-mode {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+header {
+  background: linear-gradient(135deg, var(--primary-color), #3b5998);
+  color: var(--text-color);
+  text-align: center;
+  padding: 1rem;
+  animation: floatHeader 4s ease-in-out infinite;
+  position: relative;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: white;
+  animation: pulse 2.5s infinite;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.typewriter {
+  display: inline-block;
+  border-right: 2px solid;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(40, end), blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  background: #fff2;
+  border: 1px solid #fff4;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.scroll-nav {
+  display: flex;
+  overflow-x: auto;
+  background: var(--secondary-color);
+  padding: 0.5rem;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.scroll-nav button {
+  background: #ffffff22;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s;
+  animation: fadeGlow 3s infinite alternate;
+}
+
+.scroll-nav button:hover {
+  transform: scale(1.1);
+  background: var(--hover-glow);
+}
+
+section {
+  display: none;
+  background: var(--section-bg);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  backdrop-filter: blur(2px);
+  transition: background 0.4s;
+}
+
+body.dark-mode section {
+  background: var(--dark-section);
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  font-size: 1.3rem;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+  color: #1e3d75;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: 0.3s ease;
+}
+
+li:hover {
+  transform: translateX(5px);
+  color: #2e5aac;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 0.5rem;
+  max-height: 140px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out, filter 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.07);
+  filter: brightness(1.1) saturate(1.1);
+}
+
+video {
+  width: 100%;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+footer {
+  background: linear-gradient(135deg, var(--primary-color), #3b5998);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(0,0,0,0.2); }
+  50% { transform: scale(1.1); box-shadow: 0 0 15px rgba(0,0,0,0.3); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(0,0,0,0.2); }
+}
+
+@keyframes floatHeader {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes fadeGlow {
+  from { box-shadow: 0 0 5px rgba(255,255,255,0.2); }
+  to { box-shadow: 0 0 15px rgba(255,255,255,0.5); }
+}
+
+  </style>
+</head>
+<body><header data-aos="fade-down">
+  <div class="logo"><img src="logo.jpg" alt="Logo"></div>
+  <h1 class="typewriter">D.V.H.S.S Thalavoor</h1>
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌓 Dark Mode</button>
+</header><nav class="scroll-nav" data-aos="fade-up">
+  <button onclick="showSection('about')">About</button>
+  <button onclick="showSection('info')">Info</button>
+  <button onclick="showSection('achievements')">Achievements</button>
+  <button onclick="showSection('news')">News</button>
+  <button onclick="showSection('gallery')">Gallery</button>
+  <button onclick="showSection('contact')">Contact</button>
+  <button onclick="showSection('staff')">Staff</button>
+  <button onclick="showSection('events')">Events</button>
+  <button onclick="showSection('notices')">Notices</button>
+  <button onclick="showSection('downloads')">Downloads</button>
+</nav><section id="about" class="active" data-aos="fade-up">
+  <h2>About Our School</h2>
+  <p>Welcome to D.V.H.S.S Thalavoor, where excellence in education meets a nurturing community.</p>
+  <ul>
+    <li data-aos="fade-right">30+ Hi-tech classrooms</li>
+    <li data-aos="fade-right" data-aos-delay="100">Modern science & computer labs</li>
+    <li data-aos="fade-right" data-aos-delay="200">SPC, NCC, Little Kites, NSS</li>
+  </ul>
+  <video controls data-aos="zoom-in-up" data-aos-delay="300"><source src="myvideo.mp4" type="video/webm"></video>
+</section><section id="info" data-aos="fade-left">
+  <h2>School Information</h2>
+  <ul>
+    <li>Principal: Sindhu A.R</li>
+    <li>Headmistress: R. Maheshwari</li>
+    <li>Location: Thalavoor, Kerala</li>
+    <li>Established: 1954</li>
+  </ul>
+</section><section id="achievements" data-aos="flip-left">
+  <h2>Achievements</h2>
+  <ul>
+    <li>NMMS Scholarship 2025</li>
+    <li>USS Rank Holders 2023</li>
+    <li>SSLC Top Scorers 2024</li>
+  </ul>
+</section><section id="news" data-aos="fade-up-right">
+  <h2>Latest News</h2>
+  <ul>
+    <li>Science Fair - April 2025</li>
+    <li>Padanolsavam - March 2025</li>
+  </ul>
+</section><section id="gallery" data-aos="zoom-in">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="image1.jpg" data-aos="flip-left">
+    <img src="image2.jpg" data-aos="flip-right" data-aos-delay="100">
+    <img src="image3.jpg" data-aos="flip-up" data-aos-delay="200">
+    <img src="image4.jpg" data-aos="flip-down" data-aos-delay="300">
+  </div>
+</section><section id="contact" data-aos="fade-up">
+  <h2>Contact</h2>
+  <ul>
+    <li>Email: devidurga1954@gmail.com</li>
+    <li>Phone: +91 7306713912</li>
+    <li>Address: Thalavoor, Kerala</li>
+  </ul>
+</section><section id="staff" data-aos="zoom-in-up">
+  <h2>Staff</h2>
+  <ul>
+    <li>Mr. A Kumar - Physics</li>
+    <li>Ms. Meera - English</li>
+  </ul>
+</section><section id="events" data-aos="fade-down-left">
+  <h2>Events</h2>
+  <ul>
+    <li>Independence Day - 15 Aug</li>
+    <li>Teacher’s Day - 5 Sep</li>
+  </ul>
+</section><section id="notices" data-aos="flip-up">
+  <h2>Notices</h2>
+  <ul>
+    <li>Holiday - July 10</li>
+    <li>Uniform change from August</li>
+  </ul>
+</section><section id="downloads" data-aos="fade-up">
+  <h2>Downloads</h2>
+  <ul>
+    <li><a href="timetable.pdf">📄 Timetable</a></li>
+    <li><a href="form.pdf">📄 Admission Form</a></li>
+  </ul>
+</section><footer data-aos="fade-up">
+  &copy; 2025 D.V.H.S.S Thalavoor
+</footer><script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script><script>
+  AOS.init({ duration: 800, once: true });
+
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script></body>
+</html>
